@@ -1,0 +1,177 @@
+/* Gaming-Themed Login Page */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #110000 10%, #000 90%);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Background Grid */
+.auth-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/black-paper.png');
+  opacity: 0.05;
+  animation: gridMove 8s linear infinite;
+}
+
+@keyframes gridMove {
+  from { background-position: 0 0; }
+  to { background-position: 100px 100px; }
+}
+
+/* Neon Light Effect */
+.auth-card {
+  background: rgba(20, 20, 20, 0.95);
+  border-radius: 12px;
+  box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.8);
+  padding: 3rem;
+  width: 100%;
+  max-width: 420px; /* Increased width for more spacious layout */
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+
+.auth-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 30px rgba(255, 0, 0, 1);
+}
+
+/* Futuristic Heading */
+.auth-card h2 {
+  color: #ff0000;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px rgba(255, 0, 0, 0.9);
+  letter-spacing: 2px;
+  margin-bottom: 2rem; /* Added more spacing below heading */
+}
+
+/* Input Fields */
+.form-group {
+  margin-bottom: 1.8rem; /* Increased spacing between fields */
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ff0000;
+  margin-bottom: 0.8rem; /* Increased gap between label and input */
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 1.1rem; /* Increased padding for better spacing */
+  border: 2px solid rgba(255, 0, 0, 0.5);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease-in-out;
+  text-align: center;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #ff0000;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 1);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Submit Button */
+button[type="submit"] {
+  width: 100%;
+  background: linear-gradient(90deg, #ff0000, #cc0000);
+  color: black;
+  font-size: 1.1rem; /* Increased font size for better visibility */
+  font-weight: 700;
+  padding: 1rem; /* Made button larger */
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #ff2222, #990000);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+  transform: scale(1.05);
+}
+
+/* Neon Glow Animation */
+button[type="submit"]::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  top: -50%;
+  left: -10%;
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover::before {
+  opacity: 1;
+  animation: lightMove 1.5s linear infinite;
+}
+
+@keyframes lightMove {
+  from { transform: translateX(-100%) rotate(25deg); }
+  to { transform: translateX(100%) rotate(25deg); }
+}
+
+/* Auth Links */
+.auth-links {
+  margin-top: 2rem; /* Increased spacing from button */
+}
+
+.auth-links a {
+  color: #ff4444;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+
+.auth-links a:hover {
+  color: white;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.8);
+}
+
+/* Particle Effect */
+@keyframes particles {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(-20px); }
+}
+
+.auth-container::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.4), transparent);
+  border-radius: 50%;
+  top: 5%;
+  left: 10%;
+  filter: blur(50px);
+  animation: particles 6s infinite alternate ease-in-out;
+}
